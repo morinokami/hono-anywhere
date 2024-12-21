@@ -1,13 +1,19 @@
-import { Suspense } from "react"
-import { Hello } from "./hello";
+import { hc } from "hono/client";
+import { headers } from "next/headers";
 
-export default function Home() {
+import { App } from "./api/[...route]/route";
+
+export default async function Home() {
+  const requestUrl = (await headers()).get("x-url");
+  const client = hc<App>(requestUrl ?? "/");
+
+  const response = await client.api.hello.$get();
+  const { message } = await response.json();
+
   return (
     <>
       <h1>Hono + Next.js</h1>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Hello />
-      </Suspense>
+      <p>{message}</p>
       <p>View <a href="/api/hello/hono">the API response</a></p>
     </>
   );

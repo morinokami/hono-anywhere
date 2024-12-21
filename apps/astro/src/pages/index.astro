@@ -1,5 +1,12 @@
 ---
-import Hello from "../components/Hello.astro";
+import { hc } from "hono/client";
+
+import type { App } from "./api/[...route]";
+
+const client = hc<App>(Astro.url.origin);
+
+const response = await client.api.hello.$get();
+const { message } = await response.json();
 ---
 
 <!doctype html>
@@ -13,9 +20,7 @@ import Hello from "../components/Hello.astro";
   </head>
   <body>
     <h1>Hono + Astro</h1>
-    <Hello server:defer>
-      <div slot="fallback">Loading...</div>
-    </Hello>
+    <p>{message}</p>
     <p>View <a href="/api/hello/hono">the API response</a></p>
   </body>
 </html>

@@ -12,6 +12,7 @@
   "packageManager": "pnpm@9.15.1",
   "scripts": {
     "dev:next": "pnpm --filter \"next\" run dev",
-    "dev:astro": "pnpm --filter \"astro\" run dev"
+    "dev:astro": "pnpm --filter \"astro\" run dev",
+    "dev:nuxt": "pnpm --filter \"nuxt\" run dev"
   }
 }
