@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "hono-anywhere",
+  "description": "Write a Hono app once, run it anywhere",
+  "version": "0.0.0",
+  "author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morinokami/hono-anywhere.git"
+  },
+  "packageManager": "pnpm@9.15.1",
+  "scripts": {
+    "dev:nextjs": "pnpm --filter \"next\" run dev"
+  }
+}
