@@ -17,5 +17,5 @@ const { message } = await response.json();
 <template>
   <h1>Hono + Nuxt</h1>
   <p>{{ message }}</p>
-  <p>View <a href="/api/hello/hono">the API response</a></p>
+  <p>View <a href="/api/hello/world">the API response</a></p>
 </template>

@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 
 import { App } from "./api/[...route]/route";
 
+export const runtime = "edge";
+
 export default async function Home() {
   const requestUrl = (await headers()).get("x-url");
   const client = hc<App>(requestUrl ?? "/");
@@ -14,7 +16,7 @@ export default async function Home() {
     <>
       <h1>Hono + Next.js</h1>
       <p>{message}</p>
-      <p>View <a href="/api/hello/hono">the API response</a></p>
+      <p>View <a href="/api/hello/world">the API response</a></p>
     </>
   );
 }

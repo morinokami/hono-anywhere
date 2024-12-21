@@ -1,8 +1,6 @@
 import type { APIRoute } from "astro";
 import { Hono } from "hono";
 
-export const prerender = false;
-
 const app = new Hono()
   .basePath("/api")
   .get("/hello", async (c) => {
