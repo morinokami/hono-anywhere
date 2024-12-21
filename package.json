@@ -11,6 +11,7 @@
   },
   "packageManager": "pnpm@9.15.1",
   "scripts": {
-    "dev:nextjs": "pnpm --filter \"next\" run dev"
+    "dev:next": "pnpm --filter \"next\" run dev",
+    "dev:astro": "pnpm --filter \"astro\" run dev"
   }
 }

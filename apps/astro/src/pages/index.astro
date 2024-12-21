@@ -1,0 +1,21 @@
+---
+import Hello from "../components/Hello.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Hono + Astro</title>
+  </head>
+  <body>
+    <h1>Hono + Astro</h1>
+    <Hello server:defer>
+      <div slot="fallback">Loading...</div>
+    </Hello>
+    <p>View <a href="/api/hello/hono">the API response</a></p>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+---
+import { hc } from "hono/client";
+
+import type { App } from "../pages/api/[...route]";
+
+const referer = Astro.request.headers.get("Referer") ?? "/";
+const client = hc<App>(referer);
+
+const response = await client.api.hello.$get();
+const { message } = await response.json();
+---
+
+<div>{message}</div>
