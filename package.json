@@ -13,6 +13,7 @@
   "scripts": {
     "dev:next": "pnpm --filter \"next\" run dev",
     "dev:astro": "pnpm --filter \"astro\" run dev",
-    "dev:nuxt": "pnpm --filter \"nuxt\" run dev"
+    "dev:nuxt": "pnpm --filter \"nuxt\" run dev",
+    "dev:sveltekit": "pnpm --filter \"sveltekit\" run dev"
   }
 }
